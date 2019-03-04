@@ -5,38 +5,46 @@
 	left: 0;
 	position: absolute;
 }
-#photo {
-    width: 1100px;
-	height: 400px;
-	margin: auto;
-	background: saddlebrown;
-}
+
 #classification {
 	width: 1100px;
 	height: 300px;
 	margin: auto;
-	background: blue;
 }
+
 #body {
 	width: 1100px;
 	height: 100%;
 	margin: auto;
-	background: black;	
+	background: red;
 }
+
 #left {
 	width: 200px;
 	height: 100%;
 	float: left;
-	
 }
+
 #type {
 	width: 100%;
 	height: 60px;
+	float: left;
 	line-height: 55px;
-	text-align: center;
 	border-right: 1px solid #ccc;
-	background: salmon;
 }
+
+#type img {
+	width: 20px;
+	height: 20px;
+}
+
+#type>div {
+	float: left;
+	margin-top: 5px;
+	margin-left: 60px;
+	margin-right: 10px;
+}
+
 #right {
 	width: 890px;
 	height: 100%;
@@ -47,18 +55,28 @@
 	width: 100%;
 	margin-top: 20px;
 	height: 40px;
-	background: salmon;
 }
-#a {
+
+#kind>div {
 	margin-left: 5px;
 	width: auto;
 	float: left;
-	background: black;
 }
+
+#kind>div a {
+	text-decoration: none;
+	color: rgb(50, 50, 50);
+}
+
+#kind>div a:hover {
+	color: black;
+	text-decoration: underline;
+}
+
 #body>div {
 	width: 200px;
 	height: 200px;
 	float: left;
 	margin: 10px 10px;
-	background: seashell;
+	background: saddlebrown;
 }
