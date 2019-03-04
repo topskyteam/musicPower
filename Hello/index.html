@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/index.css" type="text/css" />
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("div.d5").hide();
+				$("input[name='button']").click(function(){
+					var u_t = $("input[name='he']").val("");
+					$("div.d5").show();
+				});
+				$("input[name='button2']").click(function(){
+					var u_t = $("input[name='he']").val();
+					$(".d3").append("<div>" + u_t + "</div>");
+					$("div.d5").hide();
+				});
+				$("input[name='button3']").click(function(){
+					$("div.d5").hide();
+				});
+				$(".d3 span").click(function(){
+					$(".d3 div").fadeToggle();
+				});
+				$(".d2 div").mouseenter(function(){
+					$(".d2 .d3 span").css("cursor","pointer");
+					$(".d2 .d3 div").css("cursor","pointer");
+					$(".d2 .d3 div").css("background-color","whitesmoke");
+				}).mouseleave(function(){
+					$(".d2 div").css("background-color","white");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="d1">
+			<div class="d2">
+				<div class="d3"><span style="">创建歌单</span><input type="button" name="button" value="新建" class="bu"/></div>
+				
+			</div>
+			<div class="d4">
+				<div style="border: 1px solid #000000;" class="d8"></div>
+				<img src="img/图标.jpg" />
+				<span>我最喜欢的音乐</span>
+				<div class="d9" style="border: 1px solid #4169E1;"></div>
+				<button>播放</button>
+				<button>收藏</button>
+				<button>分享</button>
+				<button>下载</button>
+				<button>评论</button>
+			</div>
+			<!-- 创建分组 -->
+			<div class="d5">
+				<div class="d6" style="text-align: center;">新建歌单</div>
+				<p>歌单名: <input type="text" name="he" class="text"/></p>
+				<input type="button" name="button2" class="d7" value="新建" />
+				<input type="button" name="button3" class="d7" value="取消" style="background: #FFFAF0;"/>
+			</div>
+		</div>
+	</body>
+</html>
