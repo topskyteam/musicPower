@@ -1,0 +1,47 @@
+1.数据库
+CREATE DATABASE `music` /*!40100 DEFAULT CHARACTER SET utf8 */;
+2，数据表
+评论表
+CREATE TABLE `comment` (
+  `comment_id` int(11) NOT NULL AUTO_INCREMENT,
+  `text` longtext,
+  `time` datetime DEFAULT NULL,
+  PRIMARY KEY (`comment_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+管理员表
+CREATE TABLE `t_administrators` (
+  `t_administrators_id` int(11) NOT NULL AUTO_INCREMENT,
+  `t_administrators_username` varchar(45) NOT NULL,
+  `t_administrators_password` varchar(45) NOT NULL,
+  `time` datetime DEFAULT NULL,
+  PRIMARY KEY (`t_administrators_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+音乐表
+CREATE TABLE `t_musics` (
+  `t_musics_id` int(11) NOT NULL AUTO_INCREMENT,
+  `singerName` varchar(45) NOT NULL,
+  `songName` varchar(45) NOT NULL,
+  `songLink` longtext NOT NULL,
+  `imageLink` longtext NOT NULL,
+  `t_musics_time` datetime DEFAULT NULL,
+  `Album` varchar(45) NOT NULL,
+  `wordsOfASong` longtext,
+  `frequency` int(11) DEFAULT '0',
+  PRIMARY KEY (`t_musics_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+用户表
+CREATE TABLE `t_user` (
+  `t_user_id` int(11) NOT NULL,
+  `nickname` varchar(8) NOT NULL DEFAULT 'user',
+  `usename` varchar(16) NOT NULL,
+  `password` varchar(16) NOT NULL,
+  `sex` varchar(1) DEFAULT NULL,
+  `address` varchar(45) DEFAULT NULL,
+  `usyn` varchar(5) DEFAULT NULL,
+  `introduce` longtext,
+  `time` datetime DEFAULT NULL,
+  PRIMARY KEY (`t_user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
