@@ -34,8 +34,7 @@
 		</property>
 		<property name="mappingResources">
 			<list>
-				<value>musicpwoer/user/User.hbm.xml</value>
-				<value>musicpower/user/User.hbm.xml</value>
+				<value>musicpower/entity/User.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
