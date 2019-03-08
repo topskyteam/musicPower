@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
@@ -14,13 +12,10 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd">
 
 
-	<bean id="dataSource"
-		class="org.apache.commons.dbcp.BasicDataSource">
-		<property name="driverClassName"
-			value="com.mysql.jdbc.Driver">
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver">
 		</property>
-		<property name="url"
-			value="jdbc:mysql://localhost:3306/music">
+		<property name="url" value="jdbc:mysql://localhost:3306/music">
 		</property>
 		<property name="username" value="root"></property>
 		<property name="password" value="root"></property>
@@ -37,4 +32,38 @@
 				</prop>
 			</props>
 		</property>
-	</bean></beans>
+		<property name="mappingResources">
+			<list>
+				<value>musicpwoer/user/User.hbm.xml</value>
+				<value>musicpower/user/User.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 数据访问层 -->
+	<bean id="userDao" class="musicpower.dao.impl.UserDaoImpl" autowire="byName"></bean>
+	
+	<!-- 业务逻辑层 -->
+	<bean id="userBiz" class="musicpower.biz.impl.UserBizImpl" autowire="byName"></bean>
+	
+	<!-- 功能层 -->
+	<bean id="userAction" class="musicpower.web.UserAction" autowire="byName"></bean>
+	
+	<!-- 开启事务 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" autowire="byName"></bean>
+	
+	<!-- 事务管理 -->
+	<tx:advice id="tx" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="get*" read-only="true"/>
+			<tx:method name="*"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<!-- aop -->
+	<aop:config>
+		<aop:pointcut expression="execution(* musicpower.dao.impl.*.*(..))" id="pointcut"/>
+		<aop:advisor advice-ref="tx" pointcut-ref="pointcut"/>
+	</aop:config>
+</beans>
+	
