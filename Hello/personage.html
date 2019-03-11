@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人信息</title>
+		<link rel="stylesheet" href="css/personage.css" />
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/jquery.cityselect.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".d5").hide();
+				$(".div1").click(function(){
+					$(".d3").show();
+					$(".d5").hide();
+				});
+				$(".div3").click(function(){
+					$(".d5").show();
+					$(".d3").hide();
+				});
+				//地区插件
+				$("#city_4").citySelect({
+					prov:"", 
+					city:"",
+					dist:"",
+					nodata:"none"
+				});
+				$("input[name='button1']").click(function(){
+					 alert($("input[name='date']").val());
+				});
+				//鼠标移到分组上产生的效果
+				$(".d2 div").mouseenter(function(){
+					$(".d2 div").css("cursor","pointer");
+				}).click(function(){
+					$(".d2 div").css("box-shadow","0px 3px 0px #c8c8c8 inset");
+					$(this).css("box-shadow","0px 3px 0px red inset");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="d1">
+			<p class="p1">个人设置</p>
+			<div class="d2">
+				<div class="div1">基本设置</div>
+				<div class="div3">隐私设置</div>
+			</div><br />
+			<div class="d3">
+				<span>昵称: </span>
+					<input type="text" class="tx" /><br />
+				<p class="p2">介绍: </p>
+					<textarea rows="6" cols="34"></textarea><br />
+				<span>性别: </span>
+					<input type="radio" name="radio" value="男">男
+					<input type="radio" name="radio" value="女">女
+					<input type="radio" name="radio" value="保密" checked>保密<br />
+				<span>日期: </span>
+					<input type="date" name="date" /><br />
+				<span style="float: left;">地区:</span>
+				<div id="city_4">
+					<select class="prov"></select>
+					<select class="city" disabled="disabled"></select>
+					<select class="dist" disabled="disabled"></select>
+				</div>
+				<input type="button" name="button1" value="保存" class="ip1"/>
+			</div>
+			<div class="d5">
+				<p class="p3" style="margin-top: -6px;">私信</p><p class="sp1">接收新私信提醒</p>
+				<input type="radio" name="radio1" value="所有人" class="sp2" /><span class="sp3">所有人</span><br />
+				<input type="radio" name="radio1" value="我关注的人" class="sp1" checked /><span class="sp3">我关注的人</span>
+				<hr />
+				<p class="p3">通知</p>
+				<input type="checkbox" name="checkbox1" value="歌单被收藏" class="sp4" /><span class="sp3">歌单被收藏</span><br />
+				<input type="checkbox" name="checkbox2" value="视频被收藏" class="sp5" /><span class="sp3">视频被收藏</span><br />
+				<input type="checkbox" name="checkbox3" value="电台被订阅" class="sp6" /><span class="sp3">电台被订阅</span><br />
+				<input type="checkbox" name="checkbox4" value="收到赞" class="sp6" /><span class="sp3">收到赞</span><br />
+				<input type="checkbox" name="checkbox5" value="新粉丝" class="sp6" /><span class="sp3">新粉丝</span><br />
+				<hr />
+				<p class="p3">听歌排行</p>
+				<input type="radio" name="radio2" value="所有人可见" class="sp7" /><span class="sp3">所有人可见</span><br />
+				<input type="radio" name="radio2" value="仅自己可见" class="sp8" checked /><span class="sp3">仅自己可见</span>
+			</div>
+		</div>
+	</body>
+</html>
