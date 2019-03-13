@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
-<table name="t_user" catalog="music" class="musicpower.user.User">
+<table name="t_user" catalog="music" class="musicpower.entity.User">
 	<primary-key>
 		<generator class="identity"></generator>
 	</primary-key>

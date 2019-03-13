@@ -12,14 +12,14 @@ public class SessionUtil {
 
 	
 
-	private Map<String, Object> session;
+	public static Map<String, Object> session;
 	
 	/**
 	 * 封装session.put()方法
 	 * @param key
 	 * @param object
 	 */
-	public void put(String key, Object object) {
+	public static void put(String key, Object object) {
 		session = ActionContext.getContext().getSession();
 		session.put(key, object);
 	}
