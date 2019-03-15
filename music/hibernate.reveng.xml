@@ -2,6 +2,7 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
+<<<<<<< HEAD
 	<table name="t_user" catalog="music" class="musicpower.user.User">
 		<primary-key>
 			<generator class="identity"></generator>
@@ -9,6 +10,9 @@
 	</table>
 <table name="t_administrators" catalog="music"
 	class="musicpower.entity.Administerators">
+=======
+<table name="t_user" catalog="music" class="musicpower.entity.User">
+>>>>>>> 1366be9321d69a8f0a521879046ea95d25165a03
 	<primary-key>
 		<generator class="native"></generator>
 	</primary-key>

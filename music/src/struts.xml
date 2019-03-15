@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
+<<<<<<< HEAD
 	<package name="administrators" extends="struts-default" namespace="/">
 		<action name="administrators_*" class="administratorsAction" method="{1}">
 			<result name="login">login.jsp</result>
 			<result name="index">index.jsp</result>
 			<result name="register">register.jsp</result>
+=======
+
+	<package name="user" extends="struts-default" namespace="/user">
+		<action name="*_*" class="{1}Action" method="{2}">
+			<result name="index">
+				/index.jsp
+			</result>
+		</action>
+	</package>
+	
+	<package name="ajax" extends="json-default" namespace="/">
+		<action name="*_*" class="{1}Action" method="{2}">
+			<result type="json"></result>
+>>>>>>> 1366be9321d69a8f0a521879046ea95d25165a03
 		</action>
 	</package>
 </struts>    
