@@ -11,7 +11,16 @@ public class LoginAction extends ActionSupport implements ModelDriven<User> {
 
 	private User user = new User();
 	private UserBiz userBiz;
+	private boolean result;
 	
+	public boolean getResult() {
+		return result;
+	}
+
+	public void setResult(boolean result) {
+		this.result = result;
+	}
+
 	@Override
 	public User getModel() {
 		return user;
@@ -22,9 +31,17 @@ public class LoginAction extends ActionSupport implements ModelDriven<User> {
 	}
 
 	public String get() {
-		user = userBiz.loginUser(user);
-		SessionUtil.put("user", user);
-		System.out.println("out"+user);
+		java.util.List<User> list = userBiz.loginUser(user);
+		SessionUtil.put("user", list.get(0));
 		return "index";
+	}
+	public String getUsernameAndPassword() {
+		java.util.List<User> list = userBiz.loginUser(user);
+		if (list.size() == 0) {
+			result = false;
+		} else {
+			result = true;
+		}
+		return SUCCESS;
 	}
 }

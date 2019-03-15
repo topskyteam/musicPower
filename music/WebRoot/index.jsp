@@ -32,12 +32,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	 	<div>会员充值</div>
 	 	<div>我的收藏</div>
 	 	<input type="text"  placeholder="音乐/视频/电台/用户" class="topInput" >
-	 	<% if(request.getParameter("username") != null) { %>
-	 		<%User user = (User)session.getAttribute("user");%>
-	 	<div id="personalInformation">欢迎您,<%=user.getNickname() %></div>
-	 	<% } else { %>
+	 	<% if(session.getAttribute("user") == null) { %>
 	 	<div id="loginUser">登录</div>
-	 	<% } %>
+	 	<% } else { %>
+	 		<% User user = (User)session.getAttribute("user");%>
+	 	<div id="personalInformation">
+	 	欢迎您,<%=user.getNickname() %>
+	 	</div>
   	</div>
   	<div class="muenBar">
   		<iframe src="discoverMusic.jsp"></iframe>
@@ -51,7 +52,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   			<font>登录</font>
   		</div>
   		<div id="close">×</div>
-  		<form action="user/login_get" method="post">
   		<input type="text" name="username" placeholder="输入用户名" />
   		<input type="password" name="password" placeholder="输入密码" />
   		<div id="check-code" style="overflow: hidden;">
@@ -61,10 +61,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
   		<input type="text" id="code" placeholder="输入验证码"/>
   		<button id="button">登录</button>
-  		</form>
   		<font></font>
   		<a href="">注册</a>
   		<a href="">忘记密码？</a>
   	</div>
+	<div id="information">
+		<div id="to" style="height: 0px;width: 0px;background: rgba(0,0,0,0);margin: 0 auto;"></div>
+		<div>我的主页</div>
+		<div>我的消息</div>
+		<div>VIP会员</div>
+		<div>个人设置</div>
+		<div>实名认证</div>
+		<div id="quit">退出</div>
+	</div>
+	<%session.invalidate(); } %>
   </body>
 </html>

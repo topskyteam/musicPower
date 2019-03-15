@@ -1,6 +1,6 @@
 .muenBar {
 	width: 100%;
-	height: 40px;
+	height: 30px;
 	top: 0px;
 	left: 0px;
 	position:absolute;
@@ -15,6 +15,7 @@
 	margin-left: 1%;
 	border-radius:20px;
 	text-align: center;
+	font-size: 12px;
 	color: white;
-	line-height:38px;
+	line-height:25px;
 }

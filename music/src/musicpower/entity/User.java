@@ -133,13 +133,14 @@ public class User  implements java.io.Serializable {
     public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
     }
+
+	@Override
+	public String toString() {
+		return "User [TUserId=" + TUserId + ", nickname=" + nickname
+				+ ", username=" + username + ", password=" + password
+				+ ", sex=" + sex + ", address=" + address + ", usyn=" + usyn
+				+ ", introduce=" + introduce + ", time=" + time
+				+ ", phonenumber=" + phonenumber + "]";
+	}
    
-
-
-
-
-
-
-
-
 }

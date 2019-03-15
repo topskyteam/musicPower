@@ -12,7 +12,36 @@
 	float: left;
 }
 
-.top div {
+#information {
+	width: 100px;
+	top: 26px;
+	left:1270px;
+	position: absolute;
+	display: none;
+}
+
+#information div {
+	height: 25px;
+	width: 100px;
+	color:white;
+	font-size: 12px;
+	text-align:center;
+	cursor: pointer;
+	background: #343434;
+}
+#information div>img {
+	top: 20px;
+	left: 0px;
+}
+
+#to {
+	border-top: 10px solid transparent;
+    border-bottom: 10px solid #343434;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+.top>div {
 	width:90px;
 	height:100%;
 	background-color: #101010;
@@ -33,7 +62,7 @@
 }
 
 .muenBar {
-	top: 50px;
+	top: 60px;
 	left: 0px;
 	width: 100%;
 	position: absolute;
@@ -80,7 +109,7 @@
 }
 
 #login button {
-	margin: 5px 100px;
+	margin: 15px 100px;
 	width: 200px;
 	height: 25px;
 	border: 1px solid #ccc;
@@ -121,11 +150,11 @@
 #login>font {
 	position: absolute;
 	text-align: center;
-	top: 216px;
+	top: 182px;
 	left: 100px;
 	width: 200px;
 	color: red;
-	font-size: 13.5px;
+	font-size: 12px;
 }
 
 #login>a {

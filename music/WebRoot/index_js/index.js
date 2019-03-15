@@ -13,11 +13,24 @@ $(function() {
 	$("#top>div,#close").css({
 		"cursor" : "pointer",
 	});
+	$("#information>div").mouseenter(function() {
+		$(this).css("color", "red");
+	});
+	$("#information>div").mouseleave(function() {
+		$(this).css("color", "white");
+	});
 	
 	$("#top>div").mouseenter(function() {
 		$(this).css("background-color", "red");
 	});
 	$("#top>div").mouseleave(function() {
+		$(this).css("background-color", "#101010");
+	});
+	
+	$("#personalInformation").mouseenter(function() {
+		$(this).css("background-color", "#101010");
+	});
+	$("#personalInformation").mouseleave(function() {
 		$(this).css("background-color", "#101010");
 	});
 //	登录弹框
@@ -39,15 +52,54 @@ $(function() {
 			"overflow-y" : "auto"
 		});
 	});
-//	验证码
+	
+//	登录验证
 	$("#button").click(function(){
 		var text = $("#data_code").text();
 		var code = $("#code").val();
+		
 		if (text != code) {
 			$("#login>font").text("*验证码错误*");
 			return false;
 		}
+		
+		var u_v = $("input[name='username']").val();
+		var p_v = $(":password").val();
+		
+		var params = {
+				username : u_v,
+				password : p_v
+		};
+		
+		$.ajax({
+			url: "login_getUsernameAndPassword",
+			type: "post",
+			data: params,
+			dataType: "json",
+			success:function(data, textStatus) {
+				if (data.result == false) {
+					$("#login>font").text("*账号或者密码错误*");
+				} else if (data.result == true) {
+					
+					window.location.href="user/login_get";
+				}
+			},
+			error:function(data, textStatus) {
+				alert(textStatus);
+				return false;
+			}
+		});
 	});
 	
-	$("#button").
+	$("#quit").click(function() {
+		window.location.href="";
+	});
+	
+	$("#personalInformation,#information").mouseenter(function() {
+		$("#information").show();
+	});
+	$("#personalInformation,#information").mouseleave(function() {
+		$("#information").hide();
+	});
+
 });
