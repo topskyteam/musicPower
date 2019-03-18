@@ -11,7 +11,7 @@
             <generator class="identity"></generator>
         </id>
         <property name="nickname" type="java.lang.String">
-            <column name="nickname" length="8" not-null="true" />
+            <column name="nickname" length="8" not-null="false" />
         </property>
         <property name="username" type="java.lang.String">
             <column name="username" length="16" not-null="true" />
@@ -35,7 +35,7 @@
             <column name="time" length="19" />
         </property>
         <property name="phonenumber" type="java.lang.String">
-            <column name="phonenumber" length="11" not-null="true" />
+            <column name="phonenumber" length="15" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>
