@@ -15,7 +15,7 @@ public interface UserDao {
 	 * @param user
 	 * @return
 	 */
-	public java.util.List<User> selectUser(User user);
+	public User selectUser(User user);
 	
 	/**
 	 * 修改用户

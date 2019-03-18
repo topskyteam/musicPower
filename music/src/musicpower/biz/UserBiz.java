@@ -15,7 +15,7 @@ public interface UserBiz {
 	 * @param user
 	 * @return
 	 */
-	public java.util.List<User> loginUser(User user);
+	public User loginUser(User user);
 	
 	/**
 	 * 修改

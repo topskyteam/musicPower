@@ -17,10 +17,9 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao{
 	}
 
 	@Override
-	public java.util.List<User> selectUser(User user) {
-		String hql = "from User where username=? and password=?";
-		java.util.List<User> list = getHibernateTemplate().find(hql, new String[]{user.getUsername(), user.getPassword()});
-		return list;
+	public User selectUser(User user) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
