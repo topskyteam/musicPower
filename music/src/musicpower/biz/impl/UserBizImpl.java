@@ -18,7 +18,7 @@ public class UserBizImpl implements UserBiz {
 	}
 
 	@Override
-	public User loginUser(User user) {
+	public java.util.List<User> loginUser(User user) {
 		return userDao.selectUser(user);
 	}
 
