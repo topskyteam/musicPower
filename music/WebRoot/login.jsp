@@ -1,4 +1,8 @@
+<<<<<<< HEAD:music/WebRoot/register.jsp
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+=======
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+>>>>>>> ef39843ae378e163c111536fbfadf73d14c21deb:music/WebRoot/login.jsp
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -9,7 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'register.jsp' starting page</title>
+    <title>My JSP 'login.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -29,6 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</style>
   </head>
   
+<<<<<<< HEAD:music/WebRoot/register.jsp
   <body>    	
 
     <div style="display:none"><p></p> <p></p> <p></p> <p></p></div> <form id="msform">
@@ -73,5 +78,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="register_js/register.js"></script>
 	<script src="register_js/jquery.easing.min.js" type="text/javascript"></script>
 	<script src="register_js/jQuery.time.js" type="text/javascript"></script>
+=======
+  <body>
+  	<form action="administrators_loginUser" method="post">
+    	username:<input type="text" name="TAdministratorsUsername" /><br />
+    	password:<input type="password" name="TAdministratorsPassword" /><br />
+    	<input type="submit" value="登录">
+    </form>
+>>>>>>> ef39843ae378e163c111536fbfadf73d14c21deb:music/WebRoot/login.jsp
   </body>
 </html>

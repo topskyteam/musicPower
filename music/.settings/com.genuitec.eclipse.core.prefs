@@ -1,3 +1,7 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
 validator.Checked=WebRoot/register_js/jquery-3.3.1.min.js
+=======
+validator.Checked=WebRoot/index_js/jquery-3.3.1.js
+>>>>>>> ef39843ae378e163c111536fbfadf73d14c21deb
 validator.Unchecked=
