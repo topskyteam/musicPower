@@ -64,7 +64,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   		<input type="text" id="code" placeholder="输入验证码"/>
   		<button id="button">登录</button>
   		<font></font>
-  		<a href="">注册</a>
+  		<a href="register.jsp">注册</a>
   		<a href="">忘记密码？</a>
   	</div>
 	<div id="information">
