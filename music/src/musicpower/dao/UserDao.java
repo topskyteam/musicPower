@@ -15,7 +15,7 @@ public interface UserDao {
 	 * @param user
 	 * @return
 	 */
-	public User selectUser(User user);
+	public java.util.List<User> selectUser(User user);
 	
 	/**
 	 * 修改用户
@@ -30,14 +30,4 @@ public interface UserDao {
 	 * @return
 	 */
 	public boolean deleteUser(User user);
-	
-	/**
-	 * 查询用户名是否存在
-	 */
-	public boolean getUserByname(String name);
-	
-	/**
-	 * 查询手机号是否存在
-	 */
-	public boolean getUserByPhone(String phone);
 }

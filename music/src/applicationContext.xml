@@ -18,7 +18,7 @@
 		<property name="url" value="jdbc:mysql://localhost:3306/music">
 		</property>
 		<property name="username" value="root"></property>
-		<property name="password" value="1234"></property>
+		<property name="password" value="root"></property>
 	</bean>
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
@@ -30,6 +30,8 @@
 				<prop key="hibernate.dialect">
 					org.hibernate.dialect.MySQLDialect
 				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
 			</props>
 		</property>
 		<property name="mappingResources">
@@ -46,11 +48,7 @@
 	<bean id="userBiz" class="musicpower.biz.impl.UserBizImpl" autowire="byName"></bean>
 	
 	<!-- 功能层 -->
-<<<<<<< HEAD
 	<bean id="loginAction" class="musicpower.web.LoginAndModfiyAction" autowire="byName"></bean>
-=======
-	<bean id="userAction" class="musicpower.web.UserAction" autowire="byName"></bean>
->>>>>>> 8d64becdacb2a411b30b9080aa6d8ae30857b64d
 	
 	<!-- 开启事务 -->
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" autowire="byName"></bean>

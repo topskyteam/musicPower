@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page import="musicpower.entity.*" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -9,13 +10,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'index.jsp' starting page</title>
+    <title>音乐的力量</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-<<<<<<< HEAD
 	<script type="text/javascript" src="index_js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="index_js/index.js"></script>
 	<link rel="stylesheet" type="text/css" href="index_css/index.css">
@@ -79,14 +79,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div id="quit">退出</div>
 	</div>
 	<% session.invalidate();  %>
-=======
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-  </head>
-  
-  <body>
-    This is my JSP page. <br>
->>>>>>> 8d64becdacb2a411b30b9080aa6d8ae30857b64d
   </body>
 </html>
