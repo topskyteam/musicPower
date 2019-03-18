@@ -31,7 +31,6 @@ public class UserBizImpl implements UserBiz {
 	public boolean removeUser(User user) {
 		return userDao.deleteUser(user);
 	}
-
 	@Override
 	public boolean getUserByname(String name) {
 		
@@ -43,5 +42,4 @@ public class UserBizImpl implements UserBiz {
 		// TODO Auto-generated method stub
 		return userDao.getUserByPhone(phone);
 	}
-
 }

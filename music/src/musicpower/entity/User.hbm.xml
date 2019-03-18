@@ -35,7 +35,7 @@
             <column name="time" length="19" />
         </property>
         <property name="phonenumber" type="java.lang.String">
-            <column name="phonenumber" length="15" not-null="true" />
+            <column name="phonenumber" length="11" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>

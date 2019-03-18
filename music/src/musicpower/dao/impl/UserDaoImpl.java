@@ -11,11 +11,9 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao{
 
 	@Override
 	public void createUser(User user) {
-
 		this.getHibernateTemplate().save(user);
-
 	}
-	
+
 	@Override
 	public java.util.List<User> selectUser(User user) {
 		System.out.println(user);
@@ -57,5 +55,4 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao{
 		}
 		return false;
 	}
-
 }
