@@ -7,6 +7,9 @@
 			<result name="index">
 				/index.jsp
 			</result>
+			<result name="personal">
+				/personal.jsp
+			</result>
 		</action>
 	</package>
 	

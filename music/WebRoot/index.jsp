@@ -19,6 +19,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="index_js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="index_js/index.js"></script>
 	<link rel="stylesheet" type="text/css" href="index_css/index.css">
+	
+	<% User user = (User)session.getAttribute("user");%>
   </head>
   
   <body>
@@ -35,16 +37,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	 	<% if(session.getAttribute("user") == null) { %>
 	 	<div id="loginUser">登录</div>
 	 	<% } else { %>
-	 		<% User user = (User)session.getAttribute("user");%>
 	 	<div id="personalInformation">
 	 	欢迎您,<%=user.getNickname() %>
 	 	</div>
+		<%} %>
   	</div>
   	<div class="muenBar">
   		<iframe src="discoverMusic.jsp"></iframe>
   	</div>
   	<div class="body">
-  		<iframe src="recommend.jsp"></iframe>
+  		<iframe name="body" src="recommend.jsp"></iframe>
   	</div>
   	<div id="loginBackground"></div>
   	<div id="login">
@@ -70,10 +72,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div>我的主页</div>
 		<div>我的消息</div>
 		<div>VIP会员</div>
-		<div>个人设置</div>
+		<% if(session.getAttribute("user") != null) { %>
+		<div id="personal" myvalue="<%=user.getTUserId() %>">个人设置</div>
+	 	<% }%>
 		<div>实名认证</div>
 		<div id="quit">退出</div>
 	</div>
-	<%session.invalidate(); } %>
+	<% session.invalidate();  %>
   </body>
 </html>

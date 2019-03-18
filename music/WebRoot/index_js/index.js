@@ -94,7 +94,7 @@ $(function() {
 	$("#quit").click(function() {
 		window.location.href="";
 	});
-	
+//	用户登录后功能
 	$("#personalInformation,#information").mouseenter(function() {
 		$("#information").show();
 	});
@@ -102,4 +102,15 @@ $(function() {
 		$("#information").hide();
 	});
 
+	$("#personal").click(function() {
+		var id = $(this).attr("myvalue");
+		$(".muenBar").hide();
+		$(".body").css("top","55px");
+		$("body").css({
+			"overflow-x" : "hidden",
+			"overflow-y" : "hidden",
+		});
+		window.open("user/login_getUserById?user.getTUserId="+id,"body");
+	});
+	
 });

@@ -48,7 +48,7 @@
 	<bean id="userBiz" class="musicpower.biz.impl.UserBizImpl" autowire="byName"></bean>
 	
 	<!-- 功能层 -->
-	<bean id="loginAction" class="musicpower.web.LoginAction" autowire="byName"></bean>
+	<bean id="loginAction" class="musicpower.web.LoginAndModfiyAction" autowire="byName"></bean>
 	
 	<!-- 开启事务 -->
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" autowire="byName"></bean>
