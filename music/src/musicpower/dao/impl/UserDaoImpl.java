@@ -1,5 +1,7 @@
 package musicpower.dao.impl;
 
+import java.util.List;
+
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import musicpower.dao.UserDao;
@@ -9,8 +11,9 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao{
 
 	@Override
 	public void createUser(User user) {
-		// TODO Auto-generated method stub
-		
+
+		this.getHibernateTemplate().save(user);
+
 	}
 
 	@Override
@@ -28,6 +31,25 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao{
 	@Override
 	public boolean deleteUser(User user) {
 		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean getUserByname(String name) {
+		List<User> lie=this.getHibernateTemplate().find("from User where username=?",name);
+		System.out.println(lie);
+		if(lie.size()!=0){
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean getUserByPhone(String phone) {
+		List<User> phones=this.getHibernateTemplate().find("from User where phonenumber=?",phone);
+		if(phones.size()!=0){
+			return true;
+		}
 		return false;
 	}
 

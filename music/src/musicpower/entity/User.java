@@ -10,16 +10,21 @@ public class User implements java.io.Serializable {
 
 	// Fields
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer TUserId;
 	private String nickname;
-	private String usename;
+	private String username;
 	private String password;
 	private String sex;
 	private String address;
 	private String usyn;
 	private String introduce;
 	private Timestamp time;
-	private Integer phonenumber;
+	private String phonenumber;
+	private String zong;  //随机数
 
 	// Constructors
 
@@ -28,20 +33,20 @@ public class User implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public User(String nickname, String usename, String password,
-			Integer phonenumber) {
-		this.nickname = nickname;
-		this.usename = usename;
+	public User(Integer TUserId, String username, String password,
+			String phonenumber) {
+		this.username = username;
 		this.password = password;
 		this.phonenumber = phonenumber;
+		this.TUserId=TUserId;
 	}
 
 	/** full constructor */
-	public User(String nickname, String usename, String password, String sex,
+	public User(String nickname, String username, String password, String sex,
 			String address, String usyn, String introduce, Timestamp time,
-			Integer phonenumber) {
+			String phonenumber) {
 		this.nickname = nickname;
-		this.usename = usename;
+		this.username = username;
 		this.password = password;
 		this.sex = sex;
 		this.address = address;
@@ -53,8 +58,18 @@ public class User implements java.io.Serializable {
 
 	// Property accessors
 
+
+	
 	public Integer getTUserId() {
 		return this.TUserId;
+	}
+
+	public String getZong() {
+		return zong;
+	}
+
+	public void setZong(String zong) {
+		this.zong = zong;
 	}
 
 	public void setTUserId(Integer TUserId) {
@@ -69,12 +84,12 @@ public class User implements java.io.Serializable {
 		this.nickname = nickname;
 	}
 
-	public String getUsename() {
-		return this.usename;
+	public String getUsername() {
+		return this.username;
 	}
 
-	public void setUsename(String usename) {
-		this.usename = usename;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -125,18 +140,18 @@ public class User implements java.io.Serializable {
 		this.time = time;
 	}
 
-	public Integer getPhonenumber() {
+	public String getPhonenumber() {
 		return this.phonenumber;
 	}
 
-	public void setPhonenumber(Integer phonenumber) {
+	public void setPhonenumber(String phonenumber) {
 		this.phonenumber = phonenumber;
 	}
 
 	@Override
 	public String toString() {
 		return "User [TUserId=" + TUserId + ", nickname=" + nickname
-				+ ", usename=" + usename + ", password=" + password + ", sex="
+				+ ", usename=" + username + ", password=" + password + ", sex="
 				+ sex + ", address=" + address + ", usyn=" + usyn
 				+ ", introduce=" + introduce + ", time=" + time
 				+ ", phonenumber=" + phonenumber + "]";

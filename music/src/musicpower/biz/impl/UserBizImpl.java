@@ -32,4 +32,16 @@ public class UserBizImpl implements UserBiz {
 		return userDao.deleteUser(user);
 	}
 
+	@Override
+	public boolean getUserByname(String name) {
+		
+		return userDao.getUserByname(name);
+	}
+
+	@Override
+	public boolean getUserByphone(String phone) {
+		// TODO Auto-generated method stub
+		return userDao.getUserByPhone(phone);
+	}
+
 }
