@@ -15,7 +15,7 @@ public interface UserBiz {
 	 * @param user
 	 * @return
 	 */
-	public java.util.List<User> loginUser(User user);
+	public User loginUser(User user);
 	
 	/**
 	 * 修改
@@ -30,4 +30,14 @@ public interface UserBiz {
 	 * @return
 	 */
 	public boolean removeUser(User user);
+	
+	/**
+	 * 查询用户名是否存在
+	 */
+	public boolean getUserByname(String name);
+	
+	/**
+	 * 查询该号码是否存在
+	 */
+	public boolean getUserByphone(String phone);
 }
