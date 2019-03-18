@@ -18,7 +18,7 @@ public class UserBizImpl implements UserBiz {
 	}
 
 	@Override
-	public java.util.List<User> loginUser(User user) {
+	public User loginUser(User user) {
 		return userDao.selectUser(user);
 	}
 
@@ -30,6 +30,18 @@ public class UserBizImpl implements UserBiz {
 	@Override
 	public boolean removeUser(User user) {
 		return userDao.deleteUser(user);
+	}
+
+	@Override
+	public boolean getUserByname(String name) {
+		
+		return userDao.getUserByname(name);
+	}
+
+	@Override
+	public boolean getUserByphone(String phone) {
+		// TODO Auto-generated method stub
+		return userDao.getUserByPhone(phone);
 	}
 
 }

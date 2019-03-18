@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
+<<<<<<< HEAD
 
 	<package name="user" extends="struts-default" namespace="/user">
 		<action name="*_*" class="{1}Action" method="{2}">
@@ -13,6 +14,8 @@
 		</action>
 	</package>
 	
+=======
+>>>>>>> 8d64becdacb2a411b30b9080aa6d8ae30857b64d
 	<package name="ajax" extends="json-default" namespace="/">
 		<action name="*_*" class="{1}Action" method="{2}">
 			<result type="json"></result>
